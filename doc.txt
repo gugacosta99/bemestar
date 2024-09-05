@@ -1,0 +1,81 @@
+DOCUMENTAÇÃO DE INTEGRAÇÃO FRONT-BACK DO APP "BEM ESTAR"
+
+
+
+============ Buscar Lista de Incidentes (get all) ============
+
+endpoint: GET https://bemestar-iota.vercel.app/api/incidentes
+response (json):
+[
+    {
+        "id": 1,
+        "nome": "Queimadura",
+        "descricao": "Queimadura",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE2-TuWD3BS_HhYRiYo2gyHLwaEJMWPnCJhA&s"
+    },
+    {
+        "id": 2,
+        "nome": "Afogamento",
+        "descricao": "Afogamento",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_aDe0ciZhknSVsyg0KpYUw7fcBpTHUvjvJw&s"
+    },
+    {
+        "id": 3,
+        "nome": "Fratura",
+        "descricao": "Fratura",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-vD02EH1ts4Bcn8NgPxVKzdl7zqpoHOHOuQ&s"
+    }
+]
+
+
+=================== Buscar Incidente (get) ===================
+
+endpoint: GET https://bemestar-iota.vercel.app/api/incidente/{id}
+  - parâmetro:
+    - id: o ID do incidente que pretende buscar
+response (json): 
+{
+    "id": 1,
+    "nome": "Queimadura",
+    "descricao": "Queimadura",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE2-TuWD3BS_HhYRiYo2gyHLwaEJMWPnCJhA&s",
+    "instrucoes": [
+        {
+            "numero": 1,
+            "descricao": "Leve à água corrente"
+        },
+        {
+            "numero": 2,
+            "descricao": "Coloque bandagem no local"
+        },
+        {
+            "numero": 3,
+            "descricao": "Buscar atendimento"
+        }
+    ]
+}
+
+
+=================== Criar Incidente (post) ===================
+
+endpoint: POST https://bemestar-iota.vercel.app/api/incidente/
+request (json): 
+{
+    "nome": "Queimadura",
+    "descricao": "Queimadura",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE2-TuWD3BS_HhYRiYo2gyHLwaEJMWPnCJhA&s",
+    "instrucoes": [
+        {
+            "numero": 1,
+            "descricao": "Leve à água corrente"
+        },
+        {
+            "numero": 2,
+            "descricao": "Coloque bandagem no local"
+        },
+        {
+            "numero": 3,
+            "descricao": "Buscar atendimento"
+        }
+    ]
+}
