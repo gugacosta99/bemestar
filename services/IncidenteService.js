@@ -1,5 +1,4 @@
 
-// Create IncidenteService class with async getAll() method
 
 const IncidenteService = {    
     async getAll() {
@@ -24,7 +23,7 @@ const IncidenteService = {
             }
         ]
         
-        return incidentes;
+        return {success: true, code: 200, data: incidentes};
     },
 
     async get(id) {
@@ -48,7 +47,23 @@ const IncidenteService = {
                 }
             ]
         }
-        return incidente;
+        return {success: true, code: 200, data: incidente};
+    },
+
+    async create (incidente) {
+        return { success: false, code: 501, data: "Not implemented" };
+    },
+
+    async update (id, incidente) {
+        return { success: false, code: 501, data: "Not implemented" };
+    },
+
+    async delete (id) {
+        return { success: false, code: 501, data: "Not implemented" };
+    },
+
+    async deleteTest() {
+        return { success: false, code: 501, data: "Not implemented" };
     }
 
 }

@@ -64,6 +64,7 @@ request (json):
     "nome": "Queimadura",
     "descricao": "Queimadura",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE2-TuWD3BS_HhYRiYo2gyHLwaEJMWPnCJhA&s",
+    "test": false,
     "instrucoes": [
         {
             "numero": 1,
