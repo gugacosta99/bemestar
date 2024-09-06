@@ -5,10 +5,10 @@
 body {
     background-color: #f4f4f4;
     background-image: url(./img/fundo.jpg);
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center center; 
-    background-attachment: fixed; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
@@ -77,11 +77,27 @@ textarea {
     margin-top: 5px;
 }
 
+#bnt-1 {
+    background-color: #f8bf23;
+    border: #333;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .container {
-        margin: 10px;
+        margin: 100px;
         padding: 15px;
+        width: 100%;
     }
 
     h2 {
@@ -96,8 +112,9 @@ textarea {
 
 @media (max-width: 480px) {
     .container {
-        margin: 5px;
-        padding: 10px;
+        margin: 100px;
+        padding: 15px;
+        width: 100%;
     }
 
     h2 {
