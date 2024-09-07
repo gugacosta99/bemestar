@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saúde e Bem-estar</title>
-    <link rel="shortcut icon" href="https://lh6.googleusercontent.com/proxy/6ovREXmeCR0FEh_QZSndkZAptmlmKLxYuCfrK9YI9FFLcaXrVFFrpLWavhqZe18EtqgLqfXtQxoKODX1wINSpou3B0T8Xx6I1dLN3iPOXwgPPSE">
+    <link rel="shortcut icon"
+        href="https://lh6.googleusercontent.com/proxy/6ovREXmeCR0FEh_QZSndkZAptmlmKLxYuCfrK9YI9FFLcaXrVFFrpLWavhqZe18EtqgLqfXtQxoKODX1wINSpou3B0T8Xx6I1dLN3iPOXwgPPSE">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         /* Global Styles */
@@ -72,12 +73,16 @@
 
         .btn-search:hover,
         .btn-create:hover {
-            background-color: #002b84;
             color: #fff;
         }
 
         .btn-create {
             height: 40px;
+        }
+
+        .btn-search {
+            background-color: rgb(46, 165, 42);
+            border: none; /* Remove a borda preta */
         }
 
         /* Cards de Produtos */
@@ -120,12 +125,13 @@
             width: 100%;
             margin-top: 10px;
             padding: 12px;
+            text-decoration: none; /* Remove sublinhado */
         }
 
         /* Footer */
         footer {
             background-color: #0042bd;
-            padding: 20px;
+            padding: 100px;
             color: white;
             text-align: center;
             margin-top: 50px;
@@ -143,7 +149,7 @@
         /* Responsividade */
         @media (max-width: 768px) {
             header {
-                height: 100px;
+                height: 150px;
             }
 
             header h1 {
@@ -161,12 +167,28 @@
                 margin-bottom: 10px;
             }
 
+            .btn-search,
+            .btn-create {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+                text-align: center;
+                height: 50px; /* Ajuste de altura para 50px */
+            }
+
             .card {
                 width: 100%;
             }
+
+            .filter-section .d-flex {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
+
         @media (max-width: 480px) {
+
             .btn-search,
             .btn-create {
                 width: 100%;
@@ -189,16 +211,16 @@
     <!-- Barra de Pesquisa -->
     <section class="filter-section container mt-5">
         <div class="d-flex justify-content-center">
-            <input type="text" class="form-control" placeholder="Pesquise produtos de saúde...">
-            <button class="btn-search" style="height: 40px; background-color: rgb(46, 165, 42);">Pesquisar</button>
-            <a href="create.html" class="btn-create" style="height: 40px;">Criar produto</a>
+            <input type="text" id="searchInput" class="form-control" placeholder="Pesquise produtos de saúde...">
+            <button class="btn-search" style="height: 40px;" method="get" onclick="pesquisar()">Pesquisar</button>
+            <a href="create.html" class="btn-create" style="height: 40px;" method="get">Criar produto</a>
         </div>
     </section>
 
     <!-- Cards de Produtos -->
     <section class="products-section container mt-5">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" id="incidentes">
                 <div class="card">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Produto 1">
                     <div class="card-body">
@@ -239,7 +261,7 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
