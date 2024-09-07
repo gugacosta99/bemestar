@@ -1,4 +1,5 @@
 const { Incidente, Instrucao } = require('../models');
+const SQLValidation = require('../services/SequelizeValidationService');
 
 const IncidenteService = {
     async getAll() {
@@ -28,6 +29,8 @@ const IncidenteService = {
             return { success: true, code: 201, data: "Incidente criado com sucesso" };
         } catch (err) {
             console.error(err);
+            const { error, message } = SQLValidation(err);
+            if (error) return { success: false, code: 400, data: message };
             return { success: false, code: 500, data: "Internal server error" };
         }
     },
