@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres.tahdrxhbndhmkhkxciyy",
+    "password": "fWC-9UGk5BZ36YX",
+    "database": "postgres",
+    "host": "aws-0-sa-east-1.pooler.supabase.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres.tahdrxhbndhmkhkxciyy",
+    "password": "fWC-9UGk5BZ36YX",
+    "database": "postgres",
+    "host": "aws-0-sa-east-1.pooler.supabase.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres.tahdrxhbndhmkhkxciyy",
+    "password": "fWC-9UGk5BZ36YX",
+    "database": "postgres",
+    "host": "aws-0-sa-east-1.pooler.supabase.com",
+    "dialect": "postgres"
+  }
+}
