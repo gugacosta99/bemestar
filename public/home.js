@@ -34,35 +34,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/*document.getElementById('filter-section container mt-5').addEventListener('submit', async (event) => {
+document.getElementById('filter-section container mt-5').addEventListener('submit', async (event) => {
     event.preventDefault(); // Impede o envio do formulário padrão
     const buscarPokemon = document.getElementById('searchInput').value;
     const response = await fetch(`/buscar/${buscarPokemon}`);
     const pokemon = await response.json();
 
-    if (pokemon) { // Verifica se o pokemon foi encontrado!!!!
-        // Limpar os detalhes dos Pokémon existentes na página inicial
-        document.getElementById('pokebola').innerHTML = ''; //onde fica o ID do card
+    if (incidentes) { // Verifica se o incidente foi encontrado!!!!
+        // Limpar os detalhes dos incidentes existentes na página inicial
+        document.getElementById('incidentes').innerHTML = ''; //onde fica o ID do card
 
-        // Exibir detalhes do Pokémon pesquisado
-        const pokemonDetails = document.createElement('div');
-        pokemonDetails.classList.add('col-md-4', 'mb-4');
-        pokemonDetails.innerHTML = `
+        // Exibir detalhes do incidente pesquisado
+        const incidenteDetails = document.createElement('div');
+        incidenteDetails.classList.add('col-md-4', 'mb-4');
+        incidenteDetails.innerHTML = `
                     <br>
                     <br>
                     <br>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">${pokemon.nome}</h5>
-                    <img src="${pokemon.imagem}" class="card-img-top" alt="${pokemon.nome}">
-                    <p class="card-text">Tipo: ${pokemon.tipo}</p>
-                    <p class="card-text">Level: ${pokemon.nivel}</p>
+                    <h5 class="card-title">${incidentes.titulo}</h5>
+                    <img src="${pokemon.imagem}" class="card-img-top" alt="${incidentes.nome}">
+                    <p class="card-text">Tipo: ${incidentes.textocomplementar}</p>
+                    <p class="card-text">Level: ${incidentes.instrucoes}</p>
                 </div>
             </div>
         `;
-        document.getElementById('pokebola').appendChild(pokemonDetails);
+        document.getElementById('incidentes').appendChild(incidenteDetails);
     } else {
         // Exibe uma mensagem caso o Pokémon não seja encontrado
-        document.getElementById('pokemonDetails').innerHTML = `<h2>Pokémon não encontrado.</h2>`;
+        document.getElementById('incidenteDetails').innerHTML = `<h2>Incidente não encontrado.</h2>`;
     }
-});*/
+});

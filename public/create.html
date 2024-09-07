@@ -51,41 +51,37 @@
     </main>
 
 
-    
+
     <script>
         // Lógica para adicionar novas instruções com botão de remoção
-        document.getElementById('btn-add-instruction').addEventListener('click', function () {
-            const instructionSection = document.getElementById('instruction-section');
-            const newInstructionIndex = instructionSection.children.length + 1;
+      document.getElementById('btn-add-instruction').addEventListener('click', function () {
+    const instructionSection = document.getElementById('instruction-section');
+    const newInstructionIndex = instructionSection.children.length + 1;
 
-            // Cria uma nova div para a nova instrução
-            const newInstructionDiv = document.createElement('div');
-            newInstructionDiv.classList.add('mb-3', 'd-flex', 'align-items-center');
-            newInstructionDiv.setAttribute('id', `instruction-${newInstructionIndex}`);
+    const newInstructionDiv = document.createElement('div');
+    newInstructionDiv.classList.add('mb-3', 'd-flex', 'align-items-center');
+    newInstructionDiv.setAttribute('id', `instruction-${newInstructionIndex}`);
 
-            // Cria o input para a nova instrução
-            const newInstructionInput = document.createElement('input');
-            newInstructionInput.type = 'text';
-            newInstructionInput.classList.add('form-control', 'mx-2');
-            newInstructionInput.placeholder = `Instrução ${newInstructionIndex}`;
-            newInstructionInput.setAttribute('id', `instruction-input-${newInstructionIndex}`);
+    const newInstructionInput = document.createElement('input');
+    newInstructionInput.type = 'text';
+    newInstructionInput.classList.add('form-control', 'mx-2');
+    newInstructionInput.placeholder = `Instrução ${newInstructionIndex}`;
+    newInstructionInput.setAttribute('id', `instruction-input-${newInstructionIndex}`);
 
-            // Cria o botão de remover (lixeira)
-            const removeButton = document.createElement('button');
-            removeButton.type = 'button';
-            removeButton.classList.add('btn', 'btn-link', 'text-danger', 'remove-btn');
-            removeButton.innerHTML = '🗑️';
-            removeButton.addEventListener('click', function () {
-                instructionSection.removeChild(newInstructionDiv);
-            });
+    const removeButton = document.createElement('button');
+    removeButton.type = 'button';
+    removeButton.classList.add('btn', 'btn-link', 'text-danger', 'remove-btn');
+    removeButton.innerHTML = '🗑️';
+    removeButton.addEventListener('click', function () {
+        instructionSection.removeChild(newInstructionDiv);
+    });
 
-            // Adiciona o input e o botão de remover ao novo div
-            newInstructionDiv.appendChild(newInstructionInput);
-            newInstructionDiv.appendChild(removeButton);
+    newInstructionDiv.appendChild(newInstructionInput);
+    newInstructionDiv.appendChild(removeButton);
 
-            // Adiciona o novo div ao instruction-section
-            instructionSection.appendChild(newInstructionDiv);
-        });
+    instructionSection.appendChild(newInstructionDiv);
+});
+
     </script>
 </body>
 
