@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saúde e Bem-estar</title>
-    <link rel="shortcut icon"
-        href="https://lh6.googleusercontent.com/proxy/6ovREXmeCR0FEh_QZSndkZAptmlmKLxYuCfrK9YI9FFLcaXrVFFrpLWavhqZe18EtqgLqfXtQxoKODX1wINSpou3B0T8Xx6I1dLN3iPOXwgPPSE">
+    <link rel="shortcut icon" href="https://lh6.googleusercontent.com/proxy/6ovREXmeCR0FEh_QZSndkZAptmlmKLxYuCfrK9YI9FFLcaXrVFFrpLWavhqZe18EtqgLqfXtQxoKODX1wINSpou3B0T8Xx6I1dLN3iPOXwgPPSE">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         /* Global Styles */
@@ -82,7 +81,7 @@
 
         .btn-search {
             background-color: rgb(46, 165, 42);
-            border: none; /* Remove a borda preta */
+            border: none;
         }
 
         /* Cards de Produtos */
@@ -125,7 +124,7 @@
             width: 100%;
             margin-top: 10px;
             padding: 12px;
-            text-decoration: none; /* Remove sublinhado */
+            text-decoration: none;
         }
 
         /* Footer */
@@ -173,7 +172,7 @@
                 width: 100%;
                 margin: 10px 0;
                 text-align: center;
-                height: 50px; /* Ajuste de altura para 50px */
+                height: 50px;
             }
 
             .card {
@@ -186,9 +185,7 @@
             }
         }
 
-
         @media (max-width: 480px) {
-
             .btn-search,
             .btn-create {
                 width: 100%;
@@ -212,44 +209,15 @@
     <section class="filter-section container mt-5">
         <div class="d-flex justify-content-center">
             <input type="text" id="searchInput" class="form-control" placeholder="Pesquise produtos de saúde...">
-            <button class="btn-search" style="height: 40px;" method="get" onclick="pesquisar()">Pesquisar</button>
-            <a href="create.html" class="btn-create" style="height: 40px;" method="get">Criar produto</a>
+            <button class="btn-search" style="height: 40px;" onclick="pesquisar()">Pesquisar</button>
+            <a href="create.html" class="btn-create" style="height: 40px;">Criar produto</a>
         </div>
     </section>
 
     <!-- Cards de Produtos -->
     <section class="products-section container mt-5">
-        <div class="row">
-            <div class="col-md-4" id="incidentes">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Produto 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Produto 1 <span class="badge badge-success">Popular</span></h5>
-                        <p class="card-text">Descrição curta do produto 1.</p>
-                        <a href="#" class="btn btn-primary">Visualizar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Produto 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Produto 2</h5>
-                        <p class="card-text">Descrição curta do produto 2.</p>
-                        <a href="#" class="btn btn-primary">Visualizar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Produto 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Produto 3</h5>
-                        <p class="card-text">Descrição curta do produto 3.</p>
-                        <a href="#" class="btn btn-primary">Visualizar</a>
-                    </div>
-                </div>
-            </div>
+        <div class="row" id="incidentes">
+            <!-- Cards de produtos serão inseridos aqui pelo JavaScript -->
         </div>
     </section>
 
@@ -263,6 +231,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="home.js"></script>
 </body>
 
 </html>
