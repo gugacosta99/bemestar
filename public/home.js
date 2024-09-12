@@ -31,13 +31,12 @@ document.querySelector('form').addEventListener('submit', async function (e) {
     const nome = document.getElementById('nome').value;
     const descricao = document.getElementById('descricao').value;
     const img = document.getElementById('img').value;
-    const clr = document.getElementById('clr')?.checked;  // Certifique-se de que este elemento existe no HTML
+   
 
     const data = {
         nome,
         descricao,
-        img,
-        clr
+        img
     };
 
     try {
