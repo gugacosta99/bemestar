@@ -47,12 +47,30 @@ document.querySelector('form').addEventListener('submit', async function (e) {
     const nome = document.getElementById('nome').value;
     const descricao = document.getElementById('descricao').value;
     const img = document.getElementById('img').value;
-   
+
+    const instrucoes = Array.from(document.getElementById('instruction-section').querySelectorAll('input')).map((input, index) => { return { numero: index + 1, descricao: input.value }});
+
+    let validInput = true;
+    instrucoes.forEach((instrucao) => {
+        if (!instrucao.descricao || instrucao.descricao === '') {
+            validInput = false;
+        }
+    });
+    if(!nome || nome === '' 
+        || !descricao || descricao === ''
+        || !img || img === '') {
+        validInput = false;
+    }
+    if (!validInput) {
+        alert('Preencha todos os campos');
+        return;
+    }
 
     const data = {
         nome,
         descricao,
-        img
+        img,
+        instrucoes
     };
 
     try {
@@ -65,7 +83,7 @@ document.querySelector('form').addEventListener('submit', async function (e) {
         });
 
         if (response.ok) {
-            const novoIncidente = await response.json();
+            // const novoIncidente = await response.json();
             window.location.href = '/';  // Redireciona para a página principal após salvar
         } else {
             alert('Erro ao enviar o formulário');
