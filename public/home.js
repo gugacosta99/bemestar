@@ -1,3 +1,32 @@
+window.addEventListener('load', function() {
+    const productSection = document.querySelector('.products-section');
+
+    if (productSection) {
+        fetch(`/api/incidentes`)
+        .then(response => response.json())
+        .then(data => {
+            var container = document.getElementById('incidentes');
+            container.innerHTML = '';
+            data.forEach(item => {
+                var card = `
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="${item.img}" class="card-img-top" alt="${item.nome}">
+                            <div class="card-body">
+                                <h5 class="card-title">${item.nome}</h5>
+                                <p class="card-text">${item.descricao}</p>
+                                <a href="/incidente/${item.id}" class="btn btn-primary">Saiba mais</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        })
+        .catch(error => console.error('Erro ao buscar dados:', error));
+        
+    }
+});
 
 function pesquisar() {
     var searchInput = document.getElementById('searchInput').value.toLowerCase();
@@ -10,11 +39,11 @@ function pesquisar() {
                 var card = `
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="${item.image}" class="card-img-top" alt="${item.title}">
+                            <img src="${item.img}" class="card-img-top" alt="${item.nome}">
                             <div class="card-body">
-                                <h5 class="card-title">${item.title}</h5>
-                                <p class="card-text">${item.description}</p>
-                                <a href="${item.link}" class="btn btn-primary">Saiba mais</a>
+                                <h5 class="card-title">${item.nome}</h5>
+                                <p class="card-text">${item.descricao}</p>
+                                <a href="/incidente/${item.id}" class="btn btn-primary">Saiba mais</a>
                             </div>
                         </div>
                     </div>
@@ -24,47 +53,6 @@ function pesquisar() {
         })
         .catch(error => console.error('Erro ao buscar dados:', error));
 }
-
-document.querySelector('form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const nome = document.getElementById('nome').value;
-    const descricao = document.getElementById('descricao').value;
-    const img = document.getElementById('img').value;
-   
-
-    const data = {
-        nome,
-        descricao,
-        img
-    };
-
-    try {
-        const response = await fetch('/api/incidente', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            const novoIncidente = await response.json();
-            window.location.href = '/';  // Redireciona para a página principal após salvar
-        } else {
-            alert('Erro ao enviar o formulário');
-        }
-    } catch (error) {
-        console.error('Erro:', error);
-        alert('Erro ao enviar o formulário');
-    }
-});
-
-
-
-
-
-
 
 /*document.addEventListener("DOMContentLoaded", () => {
     fetch('/api/incidentes')

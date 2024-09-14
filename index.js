@@ -9,8 +9,9 @@ const { sequelize } = require('./models');
 
 //serve static files
 app.use(express.static('public'));
-
 app.use(bodyParser.json());
+
+app.set('view engine', 'ejs');
 
 
 app.get('/usuario', (req, res) => {
@@ -19,6 +20,24 @@ app.get('/usuario', (req, res) => {
 
 app.get('/create', (req, res) => {
     res.sendFile(__dirname + '/public/create.html');
+});
+
+app.get('/incidente/:id', async (req, res) => {
+    //res.sendFile(__dirname + '/public/view.html');
+    try {
+        const { success, code, data } = await IncidenteService.get(req.params.id);
+        if (!success) {
+            return res.render('internalerror');
+        } else if (!data) {
+            return res.render('notfound');
+        }
+        const dataToSend = data.toJSON();
+        res.render('view', { data: dataToSend });
+    } catch (err) {
+        console.error(err);
+        res.render('internalerror');
+    }
+    
 });
 
 app.get('/api/incidentes', async (req, res) => {

@@ -52,38 +52,7 @@
 
         </div>
     </main>
-
-    <script>
-        // Lógica para adicionar novas instruções com botão de remoção
-        document.getElementById('btn-add-instruction').addEventListener('click', function () {
-            const instructionSection = document.getElementById('instruction-section');
-            const newInstructionIndex = instructionSection.children.length + 1;
-
-            const newInstructionDiv = document.createElement('div');
-            newInstructionDiv.classList.add('mb-3', 'd-flex', 'align-items-center');
-            newInstructionDiv.setAttribute('id', `instruction-${newInstructionIndex}`);
-
-            const newInstructionInput = document.createElement('input');
-            newInstructionInput.type = 'text';
-            newInstructionInput.classList.add('form-control', 'mx-2');
-            newInstructionInput.placeholder = `Instrução ${newInstructionIndex}`;
-            newInstructionInput.setAttribute('id', `instruction-input-${newInstructionIndex}`);
-
-            const removeButton = document.createElement('button');
-            removeButton.type = 'button';
-            removeButton.classList.add('btn', 'btn-link', 'text-danger', 'remove-btn');
-            removeButton.innerHTML = '🗑️';
-            removeButton.addEventListener('click', function () {
-                instructionSection.removeChild(newInstructionDiv);
-            });
-
-            newInstructionDiv.appendChild(newInstructionInput);
-            newInstructionDiv.appendChild(removeButton);
-
-            instructionSection.appendChild(newInstructionDiv);
-        });
-    </script>
-    <script src="home.js"></script>
+    <script src="create.js"></script>
 </body>
 
 </html>
