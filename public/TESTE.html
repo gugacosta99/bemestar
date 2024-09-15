@@ -1,85 +1,386 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Conteúdo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="create.css">
-    <link rel="shortcut icon" href="https://lh6.googleusercontent.com/proxy/6ovREXmeCR0FEh_QZSndkZAptmlmKLxYuCfrK9YI9FFLcaXrVFFrpLWavhqZe18EtqgLqfXtQxoKODX1wINSpou3B0T8Xx6I1dLN3iPOXwgPPSE" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <title>Saúde e Bem-estar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background-image: url('https://img.freepik.com/fotos-gratis/arranjo-plano-de-saude-morta-com-espaco-de-copia_23-2148854064.jpg?w=826&t=st=1725545267~exp=1725545867~hmac=ad4f12073a7f9929c4b73cfd6c8f55b8576acd8d786e077500f4663f4a86d651');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        header h1 {
+            font-size: 4rem;
+            z-index: 1;
+            position: relative;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Botões */
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #218838;
+        }
+
+        /* Seção de Serviços */
+        .services-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item img {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        /* Testemunhos */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Artigos de Blog */
+        .blog-section {
+            padding: 80px 0;
+        }
+
+        .blog-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .blog-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .blog-item img {
+            width: 200px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .blog-content {
+            flex: 1;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            color: #666;
+        }
+
+        /* CTA */
+        .cta-section {
+            background-color: #28a745;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section a {
+            background-color: #fff;
+            color: #28a745;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-section a:hover {
+            background-color: #e2e6ea;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            color: #999;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .blog-item {
+                flex-direction: column;
+            }
+
+            .blog-item img {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Barra de Pesquisa */
+        .filter-section input {
+            padding: 12px;
+            border-radius: 2px;
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-search,
+        .btn-create {
+            display: flex;
+            align-items: center;
+            background-color: #0042bd;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+        .btn-search:hover,
+        .btn-create:hover {
+            color: #fff;
+        }
+
+        .btn-create {
+            height: 40px;
+        }
+
+        .btn-search {
+            background-color: rgb(46, 165, 42);
+            border: none;
+        }
+    </style>
 </head>
 
 <body>
-    <main class="font">
-        <div class="container">
-            <h2>Cadastro de Conteúdo</h2>
 
-            <form action="/api/incidente" method="post">
-                <div class="mb-3">
-                    <label for="imageURL" class="form-label">URL da imagem</label>
-                    <input type="text" class="form-control" id="imageURL" name="imageURL"
-                        placeholder="Insira o link da imagem" required>
-                </div>
-                <div class="mb-3">
-                    <label for="title" class="form-label">Título</label>
-                    <input type="text" class="form-control" id="title" name="title"
-                        placeholder="Digite o título" required>
-                </div>
-                <div class="form-group">
-                    <label for="text">Texto Complementar</label>
-                    <textarea id="text" name="text" class="form-control" placeholder="Digite o texto complementar" required></textarea>
-                </div>
-                <hr>
-                
-                <!-- Seção de Instruções -->
-                <div id="instruction-section">
-                    <div class="mb-3 d-flex align-items-center">
-                        <label for="instruction-1" class="form-label">Instruções</label>
-                        <input type="text" class="form-control mx-2" id="instruction-1" placeholder="Instrução 1" name="instructions[]" required>
+    <!-- Header -->
+    <header>
+        <h1>Saúde e Bem-estar</h1>
+        <p>Cuidando do seu bem-estar com dicas e serviços profissionais.</p>
+        <a href="#services" class="btn-custom">Explore Nossos Serviços</a>
+    </header>
+
+    <!-- Barra de Pesquisa -->
+    <section class="filter-section container mt-5">
+        <div class="d-flex justify-content-center">
+            <!-- <input type="text" id="searchInput" class="form-control" placeholder="Pesquise produtos de saúde...">
+            <button class="btn-search" style="height: 40px;" onclick="pesquisar()">Pesquisar</button> -->
+            <a href="create.html" class="btn-create" style="height: 40px;">Criar Instruções</a>
+        </div>
+    </section>
+
+    <!-- Cards de Produtos -->
+    <section class="products-section container mt-5">
+        <div class="row" id="incidentes">
+            <!-- Cards de produtos serão inseridos aqui pelo JavaScript -->
+        </div>
+    </section>
+
+
+
+    <!-- Seção de Serviços -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/health-book.png" alt="Icone">
+                        <h3>Consultoria de Saúde</h3>
+                        <p>Tenha acesso às melhores dicas de saúde personalizadas para você.</p>
                     </div>
                 </div>
-                
-                <!-- Botão para adicionar novas instruções -->
-                <button type="button" class="btn btn-danger" id="btn-add-instruction">Adicionar instrução</button>
-                <br><br>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </form>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="https://img.icons8.com/ios-filled/100/000000/medical-doctor.png" alt="Icone">
+                        <h3>Especialistas em Saúde</h3>
+                        <p>Converse com nossos especialistas e melhore sua qualidade de vida.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="https://th.bing.com/th/id/OIP.xganW0IgPryiaAVRNRYlSQAAAA?rs=1&pid=ImgDetMain"
+                            alt="Icone">
+                        <h3>Primeiros Socorros</h3>
+                        <p>Aprenda como realizar primeiros socorros em situações de emergência.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <script>
-        // Lógica para adicionar novas instruções com botão de remoção
-        document.getElementById('btn-add-instruction').addEventListener('click', function () {
-            const instructionSection = document.getElementById('instruction-section');
-            const newInstructionIndex = instructionSection.children.length + 1;
+    <!-- Testemunhos -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="testimonial">
+                <p>"As intruções foram excelentes, me ajudaram a melhorar minha saúde em poucas semanas. Recomendo a
+                    todos!"</p>
+                <h4>– Maria Silva</h4>
+            </div>
+        </div>
+    </section>
 
-            const newInstructionDiv = document.createElement('div');
-            newInstructionDiv.classList.add('mb-3', 'd-flex', 'align-items-center');
-            newInstructionDiv.setAttribute('id', `instruction-${newInstructionIndex}`);
+    <!-- Blog -->
+    <section class="blog-section">
+        <div class="container">
+            <h2>Últimos Artigos</h2>
+            <div class="blog-item">
+                <img src="https://th.bing.com/th/id/R.8e4431001ec0f64ee741f90a09ae0c21?rik=U3G1XqRsofkNIA&pid=ImgRaw&r=0"
+                    alt="Blog">
+                <div class="blog-content">
+                    <h3>Dicas de alimentação saudável</h3>
+                    <p>Aprenda como manter uma alimentação equilibrada e saudável no seu dia a dia.</p>
+                </div>
+            </div>
+            <div class="blog-item">
+                <img src="https://th.bing.com/th/id/OIP.kCqL9uLrwG6i0S2gEzHYCwHaEX?rs=1&pid=ImgDetMain" alt="Blog">
+                <div class="blog-content">
+                    <h3>Exercícios para o bem-estar mental</h3>
+                    <p>Descubra como pequenas mudanças podem impactar sua saúde mental positivamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            const newInstructionInput = document.createElement('input');
-            newInstructionInput.type = 'text';
-            newInstructionInput.classList.add('form-control', 'mx-2');
-            newInstructionInput.placeholder = `Instrução ${newInstructionIndex}`;
-            newInstructionInput.setAttribute('name', 'instructions[]');
-            newInstructionInput.required = true;
+    <!-- Footer -->
+<footer style="background-color: #111; color: #fff; padding: 40px 0;">
+    <div class="container">
+        
+        <div class="row">
+            <!-- Redes Sociais -->
+            <div class="col-md-4 text-center mb-3">
+                <h5>Siga-nos</h5>
+                <a href="#" style="color: #fff; margin-right: 15px;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png" alt="Facebook"></a>
+                <a href="#" style="color: #fff; margin-right: 15px;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"></a>
+                <a href="#" style="color: #fff; margin-right: 15px;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/linkedin.png" alt="LinkedIn"></a>
+                <a href="#" style="color: #fff;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter.png" alt="Twitter"></a>
+            </div>
 
-            const removeButton = document.createElement('button');
-            removeButton.type = 'button';
-            removeButton.classList.add('btn', 'btn-link', 'text-danger', 'remove-btn');
-            removeButton.innerHTML = '🗑️';
-            removeButton.addEventListener('click', function () {
-                instructionSection.removeChild(newInstructionDiv);
-            });
+            <!-- Links úteis -->
+            <div class="col-md-4 text-center mb-3">
+                <h5>Links Úteis</h5>
+                <a href="#" style="color: #999; display: block; margin-bottom: 5px; text-decoration: none;">Política de Privacidade</a>
+                <a href="#" style="color: #999; display: block; margin-bottom: 5px; text-decoration: none;">Termos de Serviço</a>
+                <a href="#" style="color: #999; display: block; margin-bottom: 5px; text-decoration: none;">Contato</a>
+            </div>
 
-            newInstructionDiv.appendChild(newInstructionInput);
-            newInstructionDiv.appendChild(removeButton);
+            <!-- Direitos Autorais -->
+            <div class="col-md-4 text-center mb-3">
+                <h5>© 2024 Saúde e Bem-estar</h5>
+                <p style="color: #999;">Todos os direitos reservados aos alunos de ADS 4ºA.</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
-            instructionSection.appendChild(newInstructionDiv);
-        });
-    </script>
+    <script src="home.js"></script>
 </body>
 
 </html>
