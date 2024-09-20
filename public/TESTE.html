@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saúde e Bem-estar</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
+   <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2966/2966459.png" type="image/x-icon">
+   <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
         body {
@@ -49,6 +50,58 @@
             font-size: 1.5rem;
             z-index: 1;
             position: relative;
+        }
+
+        /* Cards de Produtos */
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .btn-primary {
+            background-color: #0042bd;
+            border-radius: 25px;
+            width: 100%;
+            margin-top: 10px;
+            padding: 12px;
+            text-decoration: none;
+        }
+
+        .card {
+            width: 100%;
+        }
+
+        .filter-section .d-flex {
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Botões */
@@ -350,35 +403,42 @@
     </section>
 
     <!-- Footer -->
-<footer style="background-color: #111; color: #fff; padding: 40px 0;">
-    <div class="container">
-        
-        <div class="row">
-            <!-- Redes Sociais -->
-            <div class="col-md-4 text-center mb-3">
-                <h5>Siga-nos</h5>
-                <a href="#" style="color: #fff; margin-right: 15px;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png" alt="Facebook"></a>
-                <a href="#" style="color: #fff; margin-right: 15px;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"></a>
-                <a href="#" style="color: #fff; margin-right: 15px;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/linkedin.png" alt="LinkedIn"></a>
-                <a href="#" style="color: #fff;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter.png" alt="Twitter"></a>
-            </div>
+    <footer style="background-color: #111; color: #fff; padding: 40px 0;">
+        <div class="container">
 
-            <!-- Links úteis -->
-            <div class="col-md-4 text-center mb-3">
-                <h5>Links Úteis</h5>
-                <a href="#" style="color: #999; display: block; margin-bottom: 5px; text-decoration: none;">Política de Privacidade</a>
-                <a href="#" style="color: #999; display: block; margin-bottom: 5px; text-decoration: none;">Termos de Serviço</a>
-                <a href="#" style="color: #999; display: block; margin-bottom: 5px; text-decoration: none;">Contato</a>
-            </div>
+            <div class="row">
+                <!-- Redes Sociais -->
+                <div class="col-md-4 text-center mb-3">
+                    <h5>Siga-nos</h5>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><img
+                            src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook-new.png" alt="Facebook"></a>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><img
+                            src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"></a>
+                    <a href="#" style="color: #fff; margin-right: 15px;"><img
+                            src="https://img.icons8.com/ios-glyphs/30/ffffff/linkedin.png" alt="LinkedIn"></a>
+                    <a href="#" style="color: #fff;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter.png"
+                            alt="Twitter"></a>
+                </div>
 
-            <!-- Direitos Autorais -->
-            <div class="col-md-4 text-center mb-3">
-                <h5>© 2024 Saúde e Bem-estar</h5>
-                <p style="color: #999;">Todos os direitos reservados aos alunos de ADS 4ºA.</p>
+                <!-- Links úteis -->
+                <div class="col-md-4 text-center mb-3">
+                    <h5>Links Úteis</h5>
+                    <a href="#" style="color: #999; display: block; margin-bottom: 5px; text-decoration: none;">Política
+                        de Privacidade</a>
+                    <a href="#" style="color: #999; display: block; margin-bottom: 5px; text-decoration: none;">Termos
+                        de Serviço</a>
+                    <a href="#"
+                        style="color: #999; display: block; margin-bottom: 5px; text-decoration: none;">Contato</a>
+                </div>
+
+                <!-- Direitos Autorais -->
+                <div class="col-md-4 text-center mb-3">
+                    <h5>© 2024 Saúde e Bem-estar</h5>
+                    <p style="color: #999;">Todos os direitos reservados aos alunos de ADS 4ºA.</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="home.js"></script>
 </body>
